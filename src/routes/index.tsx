@@ -23,7 +23,7 @@ type ProductCardData = {
   imageUrl?: string;
 };
 
-const API_URL = (import.meta.env.VITE_API_URL || "https://chemfix-backend.vercel.app/api").replace(/\/$/, "");
+const API_URL = (import.meta.env.VITE_API_URL || "https://chemfix-backend-rho.vercel.app/api").replace(/\/$/, "");
 
 const gallery = [
   { src: gDrum, alt: "Industrial chemical drum", span: "sm:row-span-2" },
