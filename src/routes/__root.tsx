@@ -1,6 +1,8 @@
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { SEO } from "@/components/site/SEO";
+import { Analytics } from "@/components/site/Analytics";
 import { Toaster } from "sonner";
 
 export function NotFoundComponent() {
@@ -57,6 +59,8 @@ export function ErrorComponent({ error, reset }: { error: Error; reset?: () => v
 export default function RootLayout() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO />
+      <Analytics />
       <Navbar />
       <main className="flex-1">
         <Outlet />
