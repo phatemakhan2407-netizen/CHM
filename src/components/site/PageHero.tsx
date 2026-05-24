@@ -11,20 +11,16 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
-        style={{ backgroundImage: `url(${image})` }}
-      >
-        <img
-          src={image}
-          alt=""
-          aria-hidden
-          loading="eager"
-          fetchPriority="high"
-          className="sr-only"
-        />
-      </div>
+    <section className="relative min-h-[92svh] flex items-center overflow-hidden">
+      <img
+        src={image}
+        alt=""
+        aria-hidden
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
 
       {/* Subtle dark overlay for text contrast */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent" />
