@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://chemfix.org/sitemap.xml
