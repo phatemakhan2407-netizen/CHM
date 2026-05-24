@@ -23,7 +23,7 @@ type ProductCardData = {
   imageUrl?: string;
 };
 
-const API_URL = (import.meta.env.VITE_API_URL || "https://chemfix-backend-rho.vercel.app/api").replace(/\/$/, "");
+const API_URL = (import.meta.env.VITE_API_URL || "https://api.chemfix.org/api").replace(/\/$/, "");
 
 const gallery = [
   { src: gDrum, alt: "Industrial chemical drum", span: "sm:row-span-2" },
@@ -83,6 +83,7 @@ export default function HomePage() {
             {products.map((p, i) => (
               <motion.article
                 key={p.id || p.slug || p.title}
+                id={p.slug}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
@@ -94,6 +95,7 @@ export default function HomePage() {
                     src={p.imageUrl || p.image}
                     alt={p.title}
                     loading={i < 4 ? "eager" : "lazy"}
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
@@ -142,6 +144,7 @@ export default function HomePage() {
                   src={g.src}
                   alt={g.alt}
                   loading={i < 2 ? "eager" : "lazy"}
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
