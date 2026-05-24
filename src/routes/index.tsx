@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { productCategories } from "@/components/site/data";
 
 import heroImg from "@/assessts/products.png";
 import gPlant from "@/assessts/g-plant.png";
@@ -16,6 +15,7 @@ import gFlooring from "@/assessts/p-floaring.png";
 
 type ProductCardData = {
   id?: string;
+  _id?: string;
   slug?: string;
   title: string;
   description: string;
@@ -42,7 +42,9 @@ export default function HomePage() {
 
     fetch(`${API_URL}/products`, { signal: controller.signal })
       .then((response) => (response.ok ? response.json() : []))
-      .then((products) => {
+      .then((data) => {
+        const products = Array.isArray(data) ? data : data?.products;
+
         if (Array.isArray(products)) {
           setUploadedProducts(products);
         }
@@ -57,7 +59,7 @@ export default function HomePage() {
   }, []);
 
   const products = useMemo<ProductCardData[]>(
-    () => [...uploadedProducts, ...productCategories],
+    () => uploadedProducts,
     [uploadedProducts],
   );
 
@@ -82,7 +84,7 @@ export default function HomePage() {
           <div className="mt-10 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
             {products.map((p, i) => (
               <motion.article
-                key={p.id || p.slug || p.title}
+                key={p.id || p._id || p.slug || p.title}
                 id={p.slug}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
