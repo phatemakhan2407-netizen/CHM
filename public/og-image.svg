@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">CHEMfix Construction Chemicals</title>
+  <desc id="desc">CHEMfix branded social sharing image for construction chemical systems.</desc>
+  <rect width="1200" height="630" fill="#f5f5f7"/>
+  <rect x="0" y="0" width="1200" height="630" fill="#ffffff"/>
+  <path d="M0 480h1200v150H0z" fill="#5b0e6e"/>
+  <path d="M940 0h260v630H790z" fill="#f0ebf4"/>
+  <circle cx="930" cy="170" r="170" fill="#7b2c91" opacity=".18"/>
+  <circle cx="1060" cy="430" r="210" fill="#5b0e6e" opacity=".14"/>
+  <text x="90" y="210" fill="#5b0e6e" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="800">CHEMfix</text>
+  <text x="94" y="280" fill="#2f2f33" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700">Construction Chemicals</text>
+  <text x="94" y="360" fill="#6b6b72" font-family="Arial, Helvetica, sans-serif" font-size="30">Waterproofing • Flooring • Concrete Repair</text>
+  <text x="94" y="560" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">chemfix.org</text>
+</svg>
